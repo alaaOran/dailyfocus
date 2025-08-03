@@ -1,0 +1,466 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Calendaery Design System - Modern Glassmorphism with Purple-Blue Theme */
+
+@layer base {
+  :root {
+    /* Main Brand Colors - More Vibrant */
+    --primary: 258 100% 67%; /* Beautiful purple */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 258 85% 75%;
+    
+    /* Secondary Colors */
+    --secondary: 222 100% 95%;
+    --secondary-foreground: 258 20% 25%;
+    
+    /* Background & Surface - Softer Light Mode */
+    --background: 220 20% 96%;
+    --background-secondary: 220 15% 92%;
+    --foreground: 225 20% 20%;
+    
+    /* Glass Surfaces - Softer */
+    --glass: 0 0% 98%;
+    --glass-border: 220 25% 88%;
+    --glass-hover: 258 15% 95%;
+    
+    /* UI Elements - Softer */
+    --card: 0 0% 98%;
+    --card-foreground: 225 20% 20%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 225 20% 20%;
+    --muted: 220 15% 90%;
+    --muted-foreground: 225 15% 45%;
+    --accent: 258 25% 90%;
+    --accent-foreground: 258 30% 25%;
+    
+    /* Interactive States - More Vibrant */
+    --destructive: 0 85% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 85% 50%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 100% 60%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs - Softer */
+    --border: 220 25% 88%;
+    --input: 220 25% 88%;
+    --ring: 258 100% 67%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 96%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Vibrant Gradients - Softer */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(0, 0%, 100%, 0.3), hsla(0, 0%, 100%, 0.15));
+    --gradient-welcome: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --gradient-card: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+    
+    /* Shadows & Effects - Softer */
+    --shadow-glass: 0 8px 32px hsla(258, 30%, 50%, 0.08);
+    --shadow-hover: 0 12px 40px hsla(258, 30%, 50%, 0.12);
+    --shadow-card: 0 4px 20px hsla(225, 15%, 15%, 0.06);
+    
+    /* Typography */
+    --font-body: 'Inter', system-ui, sans-serif;
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Main Brand Colors - More Vibrant Dark Mode */
+    --primary: 258 100% 70%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 258 85% 78%;
+    
+    /* Background & Surface */
+    --background: 225 25% 8%;
+    --background-secondary: 225 20% 10%;
+    --foreground: 220 15% 92%;
+    
+    /* Glass Surfaces */
+    --glass: 225 20% 12%;
+    --glass-border: 225 20% 20%;
+    --glass-hover: 258 20% 15%;
+    
+    /* UI Elements */
+    --card: 225 20% 12%;
+    --card-foreground: 220 15% 92%;
+    --popover: 225 20% 12%;
+    --popover-foreground: 220 15% 92%;
+    --secondary: 225 20% 15%;
+    --secondary-foreground: 220 15% 85%;
+    --muted: 225 20% 15%;
+    --muted-foreground: 225 10% 60%;
+    --accent: 258 20% 18%;
+    --accent-foreground: 258 30% 85%;
+    
+    /* Interactive States - More Vibrant */
+    --destructive: 0 85% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 85% 55%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 100% 65%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 225 20% 20%;
+    --input: 225 20% 20%;
+    --ring: 258 100% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dark Mode Gradients - More Vibrant */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(225, 20%, 15%, 0.4), hsla(225, 20%, 15%, 0.1));
+    --gradient-welcome: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --gradient-card: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    
+    /* Dark Mode Shadows */
+    --shadow-glass: 0 8px 32px hsla(0, 0%, 0%, 0.3);
+    --shadow-hover: 0 12px 40px hsla(0, 0%, 0%, 0.4);
+    --shadow-card: 0 4px 20px hsla(0, 0%, 0%, 0.2);
+  }
+}
+
+/* Glassmorphism Utilities */
+@layer components {
+  .glass {
+    @apply bg-glass/80 backdrop-blur-lg border border-glass-border shadow-[var(--shadow-glass)];
+  }
+  
+  .glass-hover {
+    @apply hover:bg-glass-hover/80 hover:shadow-[var(--shadow-hover)] transition-all duration-300;
+  }
+  
+  .gradient-bg {
+    background: var(--gradient-background);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-welcome {
+    background: var(--gradient-welcome);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .floating-button {
+    @apply glass glass-hover rounded-full p-3 fixed bottom-6 right-6 z-50 shadow-lg;
+  }
+
+  /* Improved spacing and layout utilities */
+  .section-spacing {
+    @apply space-y-6;
+  }
+
+  .card-spacing {
+    @apply p-6 rounded-2xl;
+  }
+
+  .interactive-hover {
+    @apply hover:scale-105 hover:shadow-lg transition-all duration-200;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+
+  .vibrant-shadow {
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+  }
+
+  .vibrant-glow {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+  }
+
+  .pulse-animation {
+    animation: pulse 2s infinite;
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+
+  .wiggle {
+    animation: wiggle 0.5s ease-in-out;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .glow-effect {
+    position: relative;
+  }
+
+  .glow-effect::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .glow-effect:hover::before {
+    opacity: 0.7;
+  }
+
+  .glass-card {
+    @apply glass rounded-xl p-4 backdrop-blur-md;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:scale-105 hover:shadow-xl transition-all duration-300;
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground));
+  }
+}
+
+/* Keyframe Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 768px) {
+    /* Improve touch targets */
+    button, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Better text readability on mobile */
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+
+    /* Improve form elements on mobile */
+    input, select, textarea {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Better spacing for mobile */
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  /* Prevent text selection on interactive elements */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better focus indicators for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+}
