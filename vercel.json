@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "calendaery-flow-main/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "calendaery-flow-main/dist" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "calendaery-flow-main/dist/index.html"
+    }
+  ]
+}
